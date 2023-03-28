@@ -15,14 +15,14 @@ pipeline{
 
         stage('Starting Container'){
             steps {
-                sh 'docker compose up -d --no-color --wait'
+                sh 'docker compose up -d'
                 sh 'docker compose ps'
             }
         }
 
         stage('Testing against the container'){
             steps{
-                sh 'curl http://localhost:3000/param?query=demo | jq'
+                sh 'curl http://localhost:80 | jq'
             }
         }
     } 
