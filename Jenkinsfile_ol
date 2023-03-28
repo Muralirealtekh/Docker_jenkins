@@ -1,0 +1,55 @@
+pipeline{
+<<<<<<< HEAD
+    agent{
+        docker{
+            image: "ubunt:latest"
+        }
+    }
+=======
+    agent { label 'master' }
+>>>>>>> 0f6ccd15e80e3e43ffcaf357e2eb058f98ec57fa
+    stages{
+        stage("build"){
+            steps{
+<<<<<<< HEAD
+                sh 'uname -a'
+=======
+                sh '''
+                    docker version
+                    docker info
+                    docker compose version
+                    curl --version
+                    jq --version
+                '''
+            }
+        }
+
+        stage('Starting Container'){
+            steps {
+                sh 'docker compose up -d'
+                sh 'docker compose ps'
+>>>>>>> 0f6ccd15e80e3e43ffcaf357e2eb058f98ec57fa
+            }
+        }
+        stage("deploy"){
+            steps{
+<<<<<<< HEAD
+                sh 'uname -a'
+            }
+        }
+    }
+}
+=======
+                sh 'curl http://localhost:8888 | jq'
+            }
+        }
+    } 
+
+    post {
+        always{
+            sh 'docker compose down'
+            sh 'docker compose ps'
+        }
+    }  
+}    
+>>>>>>> 0f6ccd15e80e3e43ffcaf357e2eb058f98ec57fa
