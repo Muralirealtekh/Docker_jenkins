@@ -1,12 +1,17 @@
 pipeline{
-    ageng {any}
+    agent {any}
     stages{
         stage('Git Clone'){
-            sh 'cd /root/jenkins/workspace/ '
-            sh 'git clone https://github.com/Muralirealtekh/jenkins.git'
+            steps{
+                sh 'cd /root/jenkins/workspace/ '
+                sh 'git clone https://github.com/Muralirealtekh/jenkins.git'
+            }
         }
         stage('Installation'){
-            sh 'npm i'
+            steps{
+                sh 'npm i'
+            }
+            
         }
     }
 }
