@@ -1,36 +1,19 @@
 pipeline{
-    agent { any }
+    agent{
+        docker{
+            image: "ubunt:latest"
+        }
+    }
     stages{
-        stage('verify installation'){
+        stage("build"){
             steps{
-                sh '''
-                    docker version
-                    docker info
-                    docker compose version
-                    curl --version
-                    jq --version
-                '''
+                sh 'uname -a'
             }
         }
-
-        stage('Starting Container'){
-            steps {
-                sh 'docker compose up -d --no-color --wait'
-                sh 'docker compose ps'
-            }
-        }
-
-        stage('Testing against the container'){
+        stage("deploy"){
             steps{
-                sh 'curl http://localhost:3000/param?query=demo | jq'
+                sh 'uname -a'
             }
         }
-    } 
-
-    post {
-        always{
-            sh 'docker compose down --remove-orphans -v'
-            sh 'docker compose ps'
-        }
-    }  
-}    
+    }
+}
