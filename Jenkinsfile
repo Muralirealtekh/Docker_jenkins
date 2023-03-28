@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Git Clone'){
             steps{
-                sh 'cd /root/jenkins/workspace/ '
+//                 sh 'cd /root/jenkins/workspace/ '
                 sh 'git clone https://github.com/Muralirealtekh/jenkins.git'
             }
         }
