@@ -4,7 +4,7 @@ pipeline{
         stage('Git Clone'){
             steps{
 //                 sh 'cd /root/jenkins/workspace/ '
-                sh 'git clone https://github.com/Muralirealtekh/jenkins.git'
+                sh 'git clone https://github.com/Zinnext/rltk-platform.git --branch dev'
             }
         }
         stage('Installation'){
