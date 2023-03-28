@@ -22,7 +22,7 @@ pipeline{
 
         stage('Testing against the container'){
             steps{
-                sh 'curl http://localhost:80 | jq'
+                sh 'curl http://localhost:8888 | jq'
             }
         }
     } 
