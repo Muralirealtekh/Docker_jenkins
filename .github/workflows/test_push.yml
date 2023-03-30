@@ -1,0 +1,21 @@
+name: Push to Test Branch
+on:
+  push:
+    branches:
+      - Docker_jenkins
+jobs:
+  push-to-test-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.ref }}
+          fetch-depth: 0
+      - name: Push changes to test branch
+        run: |
+          git config --global user.email "murali@realtekh.com"
+          git config --global user.name "Murali"
+          bash /path/to/your/script.sh
+        env:
+          TEST_BRANCH: Test
