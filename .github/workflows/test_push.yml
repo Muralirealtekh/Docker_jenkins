@@ -2,10 +2,10 @@ name: Push to Test Branch
 on:
   push:
     branches:
-      - Docker_jenkins
+      - main
   pull_request:
     branches:
-      - Docker_jenkins
+      - main
 jobs:
   push-to-test-branch:
     runs-on: ubuntu-latest
