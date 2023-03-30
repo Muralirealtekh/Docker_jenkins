@@ -19,6 +19,6 @@ jobs:
         run: |
           git config --global user.email "murali@realtekh.com"
           git config --global user.name "Murali"
-          bash /path/to/your/script.sh
+          bash scripts/deploy.sh
         env:
           TEST_BRANCH: Test
