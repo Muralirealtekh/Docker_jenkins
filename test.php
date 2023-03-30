@@ -1,2 +1,2 @@
 <?php echo "php";    ?>
-GITHUBTOKEN
+<?php echo "php";    ?>
