@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - Docker_jenkins
+  pull_request:
+    branches:
+      - Docker_jenkins
 jobs:
   push-to-test-branch:
     runs-on: ubuntu-latest
