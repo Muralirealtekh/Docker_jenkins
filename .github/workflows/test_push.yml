@@ -21,7 +21,7 @@ jobs:
           git config --global user.name "Murali"
           git add .
           git commit -m "Commit message"
-          git push https://github.com/Muralirealtekh/Docker_jenkins.git HEAD:$TEST_BRANCH
+          git push <remote> https://github.com/Muralirealtekh/Docker_jenkins.git:$TEST_BRANCH
         env:
           TEST_BRANCH: Test
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
